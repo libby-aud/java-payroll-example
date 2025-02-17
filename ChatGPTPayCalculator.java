@@ -13,16 +13,32 @@ public class ChatGPTPayCalculator {
         double hourlyWage = scanner.nextDouble();
         
         // 3. Check if overtime was worked
-        System.out.print("Did you work overtime? (y/n): ");
         scanner.nextLine(); // consume leftover newline
-        String overtimeChoice = scanner.nextLine().trim().toLowerCase();
+        
+        String overtimeChoice;
+        while (true) {
+            System.out.print("Did you work overtime? (y/n): ");
+            overtimeChoice = scanner.nextLine().trim().toLowerCase();
+            if (overtimeChoice.equals("y") || overtimeChoice.equals("n")) {
+                break; 
+            }
+            System.out.println("Invalid input. Please enter 'y' or 'n'.");
+        }
         
         double overtimePay = 0.0;
         
         if (overtimeChoice.equals("y")) {
             // 3a. Check if worked Saturday
-            System.out.print("Did you work overtime on Saturday? (y/n): ");
-            String saturdayChoice = scanner.nextLine().trim().toLowerCase();
+            String saturdayChoice;
+            while (true) {
+                System.out.print("Did you work overtime on Saturday? (y/n): ");
+                saturdayChoice = scanner.nextLine().trim().toLowerCase();
+                if (saturdayChoice.equals("y") || saturdayChoice.equals("n")) {
+                    break;
+                }
+                System.out.println("Invalid input. Please enter 'y' or 'n'.");
+            }
+            
             int saturdayOvertimeHours = 0;
             if (saturdayChoice.equals("y")) {
                 System.out.print("How many overtime hours on Saturday? ");
@@ -31,8 +47,16 @@ public class ChatGPTPayCalculator {
             }
             
             // 3b. Check if worked Sunday
-            System.out.print("Did you work overtime on Sunday? (y/n): ");
-            String sundayChoice = scanner.nextLine().trim().toLowerCase();
+            String sundayChoice;
+            while (true) {
+                System.out.print("Did you work overtime on Sunday? (y/n): ");
+                sundayChoice = scanner.nextLine().trim().toLowerCase();
+                if (sundayChoice.equals("y") || sundayChoice.equals("n")) {
+                    break;
+                }
+                System.out.println("Invalid input. Please enter 'y' or 'n'.");
+            }
+            
             int sundayOvertimeHours = 0;
             if (sundayChoice.equals("y")) {
                 System.out.print("How many overtime hours on Sunday? ");
