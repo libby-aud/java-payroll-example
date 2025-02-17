@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class WeekendHolidayPay {
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         double overtimeHours;
         double hourlyWage;
         Scanner keyboard = new Scanner(System.in);
@@ -45,14 +45,9 @@ public class WeekendHolidayPay {
                 overtimePay = OT_RATE * overtimeHours; // Regular overtime rate for non-weekend days
                 System.out.println("Your regular overtime pay is: $" + overtimePay);
 
-
-
-
                 System.out.println("Your regular pay is: $" + regularPay);
                 double totalPay = regularPay + overtimePay;
                 System.out.println("Your total pay is: $" + totalPay);
-
-
             }
         }
     }
